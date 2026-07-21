@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="个人简介与作品集模板">
-  <title>Lin — Creative Portfolio</title>
+  <meta name="description" content="夏笠洋，导演、摄影及后期创作者个人介绍。">
+  <title>夏笠洋 — Director / Cinematography / Post</title>
   <style>
     :root {
       --bg: #0a0c0c;
@@ -449,50 +449,52 @@
 
     .portrait-card {
       position: relative;
-      min-height: 610px;
+      min-height: 0;
+      aspect-ratio: 640 / 530;
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background:
-        linear-gradient(145deg, transparent 35%, rgba(201, 255, 99, 0.12)),
-        radial-gradient(circle at 48% 40%, #5f7059 0 8%, #27302a 8% 23%, #171b19 23% 46%, #0f1211 46%);
+      background: #111;
     }
 
-    .portrait-card::before {
-      position: absolute;
-      inset: 8%;
-      border: 1px solid rgba(255, 255, 255, 0.11);
-      border-radius: 50% 50% 46% 54% / 61% 41% 59% 39%;
-      content: "";
-      box-shadow: inset 0 0 80px rgba(201, 255, 99, 0.07);
-      transform: rotate(-9deg);
+    .portrait-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .portrait-card::after {
       position: absolute;
-      right: -7%;
-      bottom: -16%;
-      width: 82%;
-      aspect-ratio: 0.86;
-      border-radius: 48% 52% 20% 30%;
+      inset: 0;
       content: "";
-      background: linear-gradient(135deg, #252d28, #080909 72%);
-      box-shadow: -30px -20px 80px rgba(201, 255, 99, 0.06);
-      transform: rotate(12deg);
+      background: linear-gradient(to top, rgba(5, 7, 6, 0.22), transparent 38%);
     }
 
-    .portrait-label {
-      position: absolute;
-      right: 24px;
-      bottom: 24px;
-      z-index: 2;
-      padding: 12px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 999px;
-      color: #ccd1cc;
-      background: rgba(10, 12, 12, 0.55);
+    .portrait-caption {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 20px 4px 0;
+    }
+
+    .portrait-caption strong,
+    .portrait-caption span {
+      display: block;
+    }
+
+    .portrait-caption strong {
+      margin-bottom: 5px;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+
+    .portrait-caption span,
+    .portrait-caption small {
+      color: var(--muted);
       font-size: 0.72rem;
-      backdrop-filter: blur(12px);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .about-copy {
@@ -553,6 +555,112 @@
 
     .works .section-note {
       color: #5d645e;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .recognition-card {
+      display: flex;
+      min-height: 620px;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(32px, 4vw, 56px);
+      border-radius: 26px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 88% 10%, rgba(201, 255, 99, 0.15), transparent 18rem),
+        #111514;
+    }
+
+    .recognition-kicker,
+    .timeline-kicker {
+      color: #879087;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .recognition-title {
+      max-width: 520px;
+      margin-top: 25px;
+      font-size: clamp(2.2rem, 4vw, 4.7rem);
+      font-weight: 520;
+      letter-spacing: -0.06em;
+      line-height: 0.98;
+    }
+
+    .award-list {
+      display: grid;
+      gap: 0;
+      list-style: none;
+    }
+
+    .award-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .award-item > span {
+      color: var(--accent);
+      font-size: 0.7rem;
+    }
+
+    .award-item p {
+      color: #c9ceca;
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    .timeline-panel {
+      padding: clamp(32px, 4vw, 56px);
+      border: 1px solid rgba(16, 19, 17, 0.14);
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.32);
+    }
+
+    .timeline-kicker {
+      color: #5f685f;
+    }
+
+    .timeline {
+      margin-top: 34px;
+      border-top: 1px solid rgba(16, 19, 17, 0.18);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 22px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(16, 19, 17, 0.18);
+    }
+
+    .timeline-year {
+      color: #4e574f;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .timeline-item p,
+    .experience-summary {
+      color: #4f5751;
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    .experience-summary {
+      margin-top: 34px;
+      padding-left: 110px;
+      color: #232824;
+      font-size: 1.05rem;
     }
 
     .project-list {
@@ -847,6 +955,21 @@
       line-height: 1.65;
     }
 
+    .services-grid--three .service-card {
+      grid-column: span 4;
+    }
+
+    .contact-status {
+      color: #111411;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .footer-disciplines {
+      display: flex;
+      gap: 18px;
+    }
+
     .contact {
       position: relative;
       overflow: hidden;
@@ -1064,11 +1187,19 @@
       }
 
       .portrait-card {
-        min-height: 510px;
+        min-height: 0;
       }
 
       .about-copy {
         padding-top: 0;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .recognition-card {
+        min-height: 560px;
       }
 
       .project-card,
@@ -1124,8 +1255,18 @@
         font-size: clamp(2.8rem, 15vw, 4.6rem);
       }
 
+      #services .section-title {
+        font-size: clamp(2.8rem, 12.5vw, 4.6rem);
+      }
+
       .portrait-card {
-        min-height: 430px;
+        min-height: 0;
+      }
+
+      .portrait-caption {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
       }
 
       .stats {
@@ -1134,6 +1275,25 @@
 
       .stat-value {
         font-size: 2rem;
+      }
+
+      .recognition-card,
+      .timeline-panel {
+        padding: 28px;
+        border-radius: 20px;
+      }
+
+      .recognition-card {
+        min-height: 610px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 64px 1fr;
+        gap: 14px;
+      }
+
+      .experience-summary {
+        padding-left: 78px;
       }
 
       .project-card {
@@ -1203,12 +1363,12 @@
 
   <header class="nav" id="nav">
     <a class="logo" href="#top" aria-label="回到首页">
-      <span class="logo-mark">L.</span>
-      <span>Lin Studio</span>
+      <span class="logo-mark">XL.</span>
+      <span>Xia Liyang</span>
     </a>
     <ul class="nav-links">
       <li><a class="nav-link" href="#about">关于我</a></li>
-      <li><a class="nav-link" href="#works">精选作品</a></li>
+      <li><a class="nav-link" href="#experience">经历与荣誉</a></li>
       <li><a class="nav-link" href="#services">能力范围</a></li>
       <li><a class="nav-link" href="#contact">联系</a></li>
     </ul>
@@ -1221,7 +1381,7 @@
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-orb" aria-hidden="true"></div>
       <div class="container hero-content">
-        <p class="eyebrow reveal">Independent Creative · Shanghai</p>
+        <p class="eyebrow reveal">Director · Cinematography · Post-Production</p>
         <h1 class="hero-title reveal">
           Ideas into<br>
           <span class="outline">meaningful</span><br>
@@ -1230,10 +1390,10 @@
         <div class="hero-bottom reveal">
           <div class="availability">
             <span class="status-dot"></span>
-            <span>开放 2026 年合作机会</span>
+            <span>夏笠洋 · 导演 / 摄影 / 后期</span>
           </div>
           <p class="hero-intro">
-            你好，我是林，一名关注品牌、影像与数字体验的创意工作者。我把复杂的想法，转化成清晰、克制且令人记住的作品。
+            你好，我是夏笠洋，一名关注叙事、品牌与影像表达的导演、摄影及后期创作者。我把复杂的想法，转化成清晰、克制且令人记住的影像作品。
           </p>
           <div class="scroll-hint">
             <span>Scroll</span>
@@ -1245,8 +1405,8 @@
 
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>Brand Strategy <i>✦</i> Visual Direction <i>✦</i> Digital Experience <i>✦</i> Motion Design <i>✦</i></span>
-        <span>Brand Strategy <i>✦</i> Visual Direction <i>✦</i> Digital Experience <i>✦</i> Motion Design <i>✦</i></span>
+        <span>Direction <i>✦</i> Cinematography <i>✦</i> Post-Production <i>✦</i> Visual Storytelling <i>✦</i></span>
+        <span>Direction <i>✦</i> Cinematography <i>✦</i> Post-Production <i>✦</i> Visual Storytelling <i>✦</i></span>
       </div>
     </div>
 
@@ -1257,31 +1417,37 @@
             <div class="section-number">01 / ABOUT</div>
             <h2 class="section-title">不只追求好看，<br>更在意它为何存在。</h2>
           </div>
-          <p class="section-note">用这一部分介绍你的经历、价值观，以及你与其他创作者不同的地方。</p>
+          <p class="section-note">导演、摄影与后期的多重经验，让创意判断贯穿从前期理解到最终成片的完整过程。</p>
         </div>
 
         <div class="about-grid">
-          <div class="portrait-card reveal" aria-label="个人照片占位区域">
-            <span class="portrait-label">在这里换成你的照片 ↗</span>
-          </div>
+          <figure class="reveal">
+            <div class="portrait-card">
+              <img src="xia-liyang-portrait.webp" alt="夏笠洋在片场工作">
+            </div>
+            <figcaption class="portrait-caption">
+              <div><strong>夏笠洋</strong><span>XIA LIYANG</span></div>
+              <small>导演 / 摄影 / 后期</small>
+            </figcaption>
+          </figure>
           <div class="about-copy reveal">
             <p class="about-lead">
-              我相信真正有力量的设计，应该让人感受到一种<span>“</span><em>这就是它</em><span>”</span>的确定感。
+              我相信真正有力量的影像，应该让人感受到一种<span>“</span><em>这就是它</em><span>”</span>的确定感。
             </p>
             <p class="about-body">
-              过去六年，我参与过品牌升级、内容策划、数字产品与视觉创意项目。我的工作方式始终从理解问题开始，再寻找最精准的表达。这里可以替换为你的真实经历：你擅长什么、做过什么，以及你想和怎样的人一起工作。
+              八年来，我持续参与独立短片、纪录片、品牌内容与商业影像项目，从前期构思、现场拍摄到后期完成，逐步形成稳定而完整的项目经验。我的工作方式始终从理解表达目标开始，再为每个项目寻找最准确的叙事、画面与节奏。
             </p>
             <div class="stats">
               <div>
-                <div class="stat-value" data-count="6">0</div>
-                <div class="stat-label">年创意与设计经验</div>
+                <div class="stat-value" data-count="8" data-suffix="">0</div>
+                <div class="stat-label">年影像创作经验</div>
               </div>
               <div>
-                <div class="stat-value" data-count="42">0</div>
+                <div class="stat-value" data-count="100" data-suffix="+">0</div>
                 <div class="stat-label">完成的项目</div>
               </div>
               <div>
-                <div class="stat-value" data-count="18">0</div>
+                <div class="stat-value" data-count="18" data-suffix="+">0</div>
                 <div class="stat-label">合作品牌与团队</div>
               </div>
             </div>
@@ -1290,85 +1456,38 @@
       </div>
     </section>
 
-    <section class="section works" id="works">
+    <section class="section works" id="experience">
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="section-number">02 / SELECTED WORK</div>
-            <h2 class="section-title">少而准确的<br>精选作品。</h2>
+            <div class="section-number">02 / EXPERIENCE</div>
+            <h2 class="section-title">从片场执行，<br>到国际影展。</h2>
           </div>
-          <p class="section-note">建议只放 3–6 个最能代表你的案例，每个项目讲清楚背景、思考和结果。</p>
+          <p class="section-note">先呈现关键奖项与近年经历，完整作品和样片将在下一阶段加入。</p>
         </div>
 
-        <div class="project-list">
-          <article class="project-card reveal">
-            <div class="project-info">
-              <div>
-                <div class="project-index">PROJECT / 01</div>
-                <h3 class="project-title">Mori<br>Living</h3>
-                <p class="project-desc">为新生活方式品牌建立视觉识别与线上体验，把“自然生长”转化成简洁、有温度的品牌语言。</p>
-                <div class="tags">
-                  <span class="tag">品牌策略</span>
-                  <span class="tag">视觉系统</span>
-                  <span class="tag">网站设计</span>
-                </div>
-              </div>
-              <a class="project-link" href="#contact" aria-label="查看 Mori Living 项目">↗</a>
+        <div class="experience-grid">
+          <article class="recognition-card reveal">
+            <div>
+              <div class="recognition-kicker">Selected Recognition</div>
+              <h3 class="recognition-title">关键作品与<br>代表荣誉。</h3>
             </div>
-            <div class="project-visual visual-one" aria-hidden="true">
-              <div class="brand-ring">M.</div>
-            </div>
+            <ol class="award-list">
+              <li class="award-item"><span>01</span><p>纪录片处女作《五星中国》获湖北省文化创意设计大赛最佳微电影创作奖。</p></li>
+              <li class="award-item"><span>02</span><p>获央视网、百度网盘新中国成立70周年献礼视频征集计划最佳故事奖。</p></li>
+              <li class="award-item"><span>03</span><p>剧情短片《姥爷的铜锣》获“金飞燕”海峡两岸微电影大赛铜飞燕奖。</p></li>
+            </ol>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-info">
-              <div>
-                <div class="project-index">PROJECT / 02</div>
-                <h3 class="project-title">Inner<br>Orbit</h3>
-                <p class="project-desc">一款情绪记录应用的产品体验重构，让抽象感受变得直观、轻盈，并愿意被长期使用。</p>
-                <div class="tags">
-                  <span class="tag">产品设计</span>
-                  <span class="tag">交互体验</span>
-                  <span class="tag">创意动效</span>
-                </div>
-              </div>
-              <a class="project-link" href="#contact" aria-label="查看 Inner Orbit 项目">↗</a>
+          <div class="timeline-panel reveal">
+            <div class="timeline-kicker">Festival Journey · 2023–2025</div>
+            <div class="timeline">
+              <div class="timeline-item"><span class="timeline-year">2023</span><p>短片入选 Pebbles Underground。</p></div>
+              <div class="timeline-item"><span class="timeline-year">2024</span><p>入选 Wirksworth Horror Film Festival；获 Absurd Film Festival 最佳超短片，并获 Happenstance Horror Fest 荣誉提名。</p></div>
+              <div class="timeline-item"><span class="timeline-year">2025</span><p>作品继续入选 Leda's Monologues Film Festival、Short Movie Club Film Festival 与 The Cyprus Horror Society。</p></div>
             </div>
-            <div class="project-visual visual-two" aria-hidden="true">
-              <div class="phone">
-                <div class="phone-top"></div>
-                <div class="phone-copy">
-                  <small>Today · 20 Jul</small>
-                  <strong>How is your inner weather?</strong>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-info">
-              <div>
-                <div class="project-index">PROJECT / 03</div>
-                <h3 class="project-title">New<br>Voices</h3>
-                <p class="project-desc">独立文化刊物的全新编辑设计，在内容密度与阅读节奏之间建立更鲜明的视觉秩序。</p>
-                <div class="tags">
-                  <span class="tag">编辑设计</span>
-                  <span class="tag">艺术指导</span>
-                  <span class="tag">内容策划</span>
-                </div>
-              </div>
-              <a class="project-link" href="#contact" aria-label="查看 New Voices 项目">↗</a>
-            </div>
-            <div class="project-visual visual-three" aria-hidden="true">
-              <div class="editorial">
-                <div class="editorial-head"><span>NEW VOICES</span><span>VOL. 07</span></div>
-                <div class="editorial-body">
-                  <div class="editorial-title">Beyond<br>the<br>noise.</div>
-                  <div class="editorial-image"></div>
-                </div>
-              </div>
-            </div>
-          </article>
+            <p class="experience-summary">持续的国内外创作与入选经历，建立了从创意理解、现场执行到后期完成的成熟项目能力。</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1378,27 +1497,23 @@
         <div class="section-head reveal">
           <div>
             <div class="section-number">03 / CAPABILITIES</div>
-            <h2 class="section-title">从想法，到完整<br>发生的体验。</h2>
+            <h2 class="section-title">从想法，到画面<br>最终落地。</h2>
           </div>
-          <p class="section-note">根据你的职业调整这里，例如摄影、导演、咨询、写作、产品设计或个人服务。</p>
+          <p class="section-note">工作重心集中于导演、摄影与后期，让创意表达和制作执行保持一致。</p>
         </div>
 
-        <div class="services-grid">
+        <div class="services-grid services-grid--three">
           <article class="service-card reveal">
             <div class="service-icon">✦</div><span class="service-number">01</span>
-            <div class="service-content"><h3 class="service-title">品牌策略与定位</h3><p class="service-desc">梳理核心价值、受众与表达方向，先让品牌想清楚，再让它被看见。</p></div>
+            <div class="service-content"><h3 class="service-title">导演与创意表达</h3><p class="service-desc">从项目目标、叙事方向到现场调度，建立清晰的影像表达并推动拍摄落地。</p></div>
           </article>
           <article class="service-card reveal">
             <div class="service-icon">◌</div><span class="service-number">02</span>
-            <div class="service-content"><h3 class="service-title">视觉识别</h3><p class="service-desc">从标志、色彩、字体到图像语言，建立稳定而鲜明的视觉记忆。</p></div>
+            <div class="service-content"><h3 class="service-title">摄影与视觉执行</h3><p class="service-desc">围绕叙事与情绪处理镜头、光线和构图，在现场建立准确、稳定的视觉质感。</p></div>
           </article>
           <article class="service-card reveal">
-            <div class="service-icon">↗</div><span class="service-number">03</span>
-            <div class="service-content"><h3 class="service-title">数字体验</h3><p class="service-desc">兼顾信息、审美与交互，为网站和数字产品设计自然的使用体验。</p></div>
-          </article>
-          <article class="service-card reveal">
-            <div class="service-icon">∿</div><span class="service-number">04</span>
-            <div class="service-content"><h3 class="service-title">创意与动态表达</h3><p class="service-desc">把品牌延伸到影像、动态视觉和社交内容，让创意在更多场景持续生长。</p></div>
+            <div class="service-icon">∿</div><span class="service-number">03</span>
+            <div class="service-content"><h3 class="service-title">后期与最终呈现</h3><p class="service-desc">把握素材、节奏与整体完成度，让前期意图在最终成片中准确落地。</p></div>
           </article>
         </div>
       </div>
@@ -1409,17 +1524,15 @@
         <div class="contact-label reveal">Have a project in mind?</div>
         <h2 class="contact-title reveal">让我们做点<br><em>值得记住</em>的事。</h2>
         <div class="contact-row reveal">
-          <a class="button button-dark" href="mailto:hello@example.com">hello@example.com <span>↗</span></a>
+          <div class="contact-status">样片与联系方式即将更新</div>
           <div class="contact-meta">
-            <span>常驻上海 · 可远程合作</span>
-            <span>通常 24 小时内回复</span>
+            <span>当前版本 · 个人介绍</span>
+            <span>下一阶段 · 精选作品与样片</span>
           </div>
         </div>
         <footer class="footer">
-          <span>© 2026 LIN STUDIO. 保留所有权利。</span>
-          <div class="socials">
-            <a href="#">小红书</a><a href="#">Behance</a><a href="#">Instagram</a>
-          </div>
+          <span>© 2026 XIA LIYANG. 保留所有权利。</span>
+          <div class="footer-disciplines"><span>导演</span><span>摄影</span><span>后期</span></div>
           <a href="#top">回到顶部 ↑</a>
         </footer>
       </div>
@@ -1451,10 +1564,11 @@
         const target = Number(entry.target.dataset.count);
         const start = performance.now();
         const duration = 1200;
+        const suffix = entry.target.dataset.suffix ?? '+';
         const tick = (now) => {
           const progress = Math.min((now - start) / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
-          entry.target.textContent = Math.round(target * eased) + (target === 6 ? '+' : '+');
+          entry.target.textContent = Math.round(target * eased) + suffix;
           if (progress < 1) requestAnimationFrame(tick);
         };
         requestAnimationFrame(tick);
