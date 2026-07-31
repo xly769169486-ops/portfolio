@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="夏笠洋，导演、摄影及后期创作者个人介绍。">
+  <meta name="description" content="夏笠洋，导演、摄影及后期创作者个人简介与作品集。">
   <title>夏笠洋 — Director / Cinematography / Post</title>
   <style>
     :root {
@@ -663,6 +663,108 @@
       font-size: 1.05rem;
     }
 
+    .selected-work {
+      background: #0d1010;
+    }
+
+    .featured-work {
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .featured-media {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #050606;
+    }
+
+    .featured-media video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #050606;
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+      padding: 9px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      color: #f2f3ec;
+      background: rgba(7, 9, 8, 0.68);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      pointer-events: none;
+      backdrop-filter: blur(12px);
+    }
+
+    .featured-copy {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.58fr);
+      gap: 64px;
+      align-items: end;
+      padding: 38px 4px 0;
+    }
+
+    .featured-eyebrow {
+      margin-bottom: 15px;
+      color: var(--accent);
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .featured-title {
+      max-width: 850px;
+      font-size: clamp(2.2rem, 4.4vw, 5rem);
+      font-weight: 520;
+      letter-spacing: -0.06em;
+      line-height: 0.98;
+    }
+
+    .featured-description {
+      max-width: 720px;
+      margin-top: 20px;
+      color: #a7aea8;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .featured-actions {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .work-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      justify-content: flex-end;
+      color: #858d87;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .work-button {
+      color: #101310;
+      background: var(--accent);
+    }
+
+    .work-button:hover {
+      background: var(--ink);
+      transform: translateY(-3px);
+    }
+
     .project-list {
       display: grid;
       gap: 30px;
@@ -960,9 +1062,22 @@
     }
 
     .contact-status {
+      display: grid;
+      gap: 8px;
       color: #111411;
-      font-size: 0.9rem;
+    }
+
+    .contact-status span {
+      color: rgba(16, 19, 16, 0.62);
+      font-size: 0.68rem;
       font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+
+    .contact-email {
+      font-size: clamp(1.1rem, 2vw, 1.7rem);
+      font-weight: 700;
+      border-bottom: 1px solid rgba(16, 19, 16, 0.45);
     }
 
     .footer-disciplines {
@@ -1045,6 +1160,17 @@
       gap: 40px;
       color: rgba(16, 19, 16, 0.7);
       font-size: 0.76rem;
+    }
+
+    .contact-meta span {
+      display: grid;
+      gap: 5px;
+    }
+
+    .contact-meta b {
+      color: #101310;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
     }
 
     .footer {
@@ -1198,6 +1324,19 @@
         grid-template-columns: 1fr;
       }
 
+      .featured-copy {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .featured-actions {
+        align-items: flex-start;
+      }
+
+      .work-meta {
+        justify-content: flex-start;
+      }
+
       .recognition-card {
         min-height: 560px;
       }
@@ -1296,6 +1435,23 @@
         padding-left: 78px;
       }
 
+      .featured-media {
+        border-radius: 8px;
+      }
+
+      .featured-badge {
+        top: 10px;
+        left: 10px;
+      }
+
+      .featured-title {
+        font-size: clamp(2.25rem, 11.5vw, 3.2rem);
+      }
+
+      .work-button {
+        width: 100%;
+      }
+
       .project-card {
         border-radius: 22px;
       }
@@ -1368,8 +1524,9 @@
     </a>
     <ul class="nav-links">
       <li><a class="nav-link" href="#about">关于我</a></li>
-      <li><a class="nav-link" href="#experience">经历与荣誉</a></li>
-      <li><a class="nav-link" href="#services">能力范围</a></li>
+      <li><a class="nav-link" href="#work">作品</a></li>
+      <li><a class="nav-link" href="#experience">经历</a></li>
+      <li><a class="nav-link" href="#services">能力</a></li>
       <li><a class="nav-link" href="#contact">联系</a></li>
     </ul>
     <a class="nav-cta" href="#contact">一起合作 <span>↗</span></a>
@@ -1456,14 +1613,52 @@
       </div>
     </section>
 
+    <section class="section selected-work" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-number">02 / SELECTED WORK</div>
+            <h2 class="section-title">《选择》<br>一种生活的答案。</h2>
+          </div>
+          <p class="section-note">以海南为坐标，记录一群追浪者如何重新选择生活。</p>
+        </div>
+
+        <article class="featured-work reveal">
+          <div class="featured-media">
+            <span class="featured-badge">01:26 · EXCERPT</span>
+            <video controls preload="metadata" playsinline poster="xuanze-cover.webp" aria-label="播放纪录片《选择》节选">
+              <source src="xuanze-preview.mp4" type="video/mp4">
+              当前浏览器无法播放该视频，请前往新片场观看完整作品。
+            </video>
+          </div>
+          <div class="featured-copy">
+            <div>
+              <div class="featured-eyebrow">Independent Documentary · Hainan</div>
+              <h3 class="featured-title">一群追浪的人，为什么选择留在海南？</h3>
+              <p class="featured-description">有人为了海浪来到海南，也有人在这里重新定义生活。《选择》从人物的真实经验出发，记录他们如何面对去留、自由与另一种生活方式。</p>
+            </div>
+            <div class="featured-actions">
+              <div class="work-meta">
+                <span>独立纪录片</span>
+                <span>人物纪实</span>
+                <span>海南</span>
+                <span>网页节选</span>
+              </div>
+              <a class="button work-button" href="https://www.xinpianchang.com/a13397302?from=webShare&amp;channel=copyLink" target="_blank" rel="noopener noreferrer">新片场观看完整作品 <span>↗</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="section works" id="experience">
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="section-number">02 / EXPERIENCE</div>
+            <div class="section-number">03 / EXPERIENCE</div>
             <h2 class="section-title">从片场执行，<br>到国际影展。</h2>
           </div>
-          <p class="section-note">先呈现关键奖项与近年经历，完整作品和样片将在下一阶段加入。</p>
+          <p class="section-note">代表荣誉与近年国际影展经历，记录持续创作的轨迹。</p>
         </div>
 
         <div class="experience-grid">
@@ -1496,7 +1691,7 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="section-number">03 / CAPABILITIES</div>
+            <div class="section-number">04 / CAPABILITIES</div>
             <h2 class="section-title">从想法，到画面<br>最终落地。</h2>
           </div>
           <p class="section-note">工作重心集中于导演、摄影与后期，让创意表达和制作执行保持一致。</p>
@@ -1524,10 +1719,14 @@
         <div class="contact-label reveal">Have a project in mind?</div>
         <h2 class="contact-title reveal">让我们做点<br><em>值得记住</em>的事。</h2>
         <div class="contact-row reveal">
-          <div class="contact-status">样片与联系方式即将更新</div>
+          <div class="contact-status">
+            <span>EMAIL / 项目合作</span>
+            <a class="contact-email" href="mailto:sheeeeeeeeep@qq.com">sheeeeeeeeep@qq.com ↗</a>
+          </div>
           <div class="contact-meta">
-            <span>当前版本 · 个人介绍</span>
-            <span>下一阶段 · 精选作品与样片</span>
+            <span><b>小红书</b>夏一条</span>
+            <span><b>抖音</b>夏一条</span>
+            <span><b>新片场</b>夏一条</span>
           </div>
         </div>
         <footer class="footer">
