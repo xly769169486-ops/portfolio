@@ -6,6 +6,14 @@
   <meta name="description" content="夏笠洋，导演、摄影及后期创作者个人简介与作品集。">
   <title>夏笠洋 | Director / Cinematography / Post</title>
   <style>
+    @font-face {
+      font-family: "Inter Portfolio";
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url("assets/fonts/InterVariable.woff2") format("woff2");
+    }
+
     :root {
       --bg: #0a0c0c;
       --bg-soft: #111414;
@@ -18,6 +26,7 @@
       --warm: #f1a56b;
       --max: 1380px;
       --radius: 26px;
+      --font-sans: "Inter Portfolio", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Noto Sans CJK SC", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     * {
@@ -41,7 +50,8 @@
         radial-gradient(circle at 84% 14%, rgba(201, 255, 99, 0.07), transparent 22rem),
         radial-gradient(circle at 10% 48%, rgba(241, 165, 107, 0.05), transparent 25rem),
         var(--bg);
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: var(--font-sans);
+      font-optical-sizing: auto;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -430,22 +440,23 @@
     .section-number {
       margin-bottom: 13px;
       color: var(--accent);
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
     }
 
     .section-title {
       max-width: 850px;
       font-size: clamp(2.8rem, 6vw, 6.4rem);
       font-weight: 520;
-      letter-spacing: -0.065em;
-      line-height: 0.95;
+      letter-spacing: -0.025em;
+      line-height: 0.98;
+      text-wrap: balance;
     }
 
     .section-note {
       max-width: 310px;
       color: var(--muted);
-      font-size: 0.86rem;
+      font-size: 0.9rem;
       line-height: 1.7;
     }
 
@@ -514,8 +525,8 @@
       margin-bottom: 34px;
       font-size: clamp(1.75rem, 3.1vw, 3.25rem);
       font-weight: 440;
-      letter-spacing: -0.045em;
-      line-height: 1.14;
+      letter-spacing: -0.025em;
+      line-height: 1.18;
     }
 
     .about-lead em {
@@ -544,12 +555,12 @@
       margin-bottom: 8px;
       font-size: clamp(2.1rem, 4vw, 3.8rem);
       font-weight: 520;
-      letter-spacing: -0.06em;
+      letter-spacing: -0.035em;
     }
 
     .stat-label {
       color: var(--muted);
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       line-height: 1.4;
     }
 
@@ -559,7 +570,7 @@
     }
 
     .works .section-number {
-      color: #568500;
+      color: #426b00;
     }
 
     .works .section-note {
@@ -589,7 +600,7 @@
     .recognition-kicker,
     .timeline-kicker {
       color: #879087;
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
@@ -599,8 +610,9 @@
       margin-top: 25px;
       font-size: clamp(2.2rem, 4vw, 4.7rem);
       font-weight: 520;
-      letter-spacing: -0.06em;
-      line-height: 0.98;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      text-wrap: balance;
     }
 
     .award-list {
@@ -715,8 +727,9 @@
       max-width: 980px;
       font-size: clamp(2.7rem, 5.7vw, 6.4rem);
       font-weight: 520;
-      letter-spacing: -0.06em;
-      line-height: 0.94;
+      letter-spacing: -0.025em;
+      line-height: 0.98;
+      text-wrap: balance;
     }
 
     .work-project-subtitle {
@@ -735,9 +748,9 @@
     }
 
     .work-project-description {
-      max-width: 760px;
+      max-width: 620px;
       color: #a7aea8;
-      font-size: 0.96rem;
+      font-size: 1rem;
       line-height: 1.85;
     }
 
@@ -752,24 +765,23 @@
       padding-bottom: 18px;
       border-bottom: 1px solid var(--line);
       color: #d9ddd8;
-      font-size: 0.84rem;
+      font-size: 0.88rem;
       line-height: 1.6;
     }
 
     .work-role b {
-      color: #747c76;
-      font-size: 0.66rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
+      color: #939b95;
+      font-size: 0.75rem;
+      letter-spacing: 0;
     }
 
     .work-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 8px 16px;
-      color: #858d87;
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
+      color: #969e98;
+      font-size: 0.78rem;
+      letter-spacing: 0;
     }
 
     .work-button {
@@ -1191,8 +1203,8 @@
       position: absolute;
       top: 27px;
       right: 27px;
-      color: #626a64;
-      font-size: 0.7rem;
+      color: #879087;
+      font-size: 0.75rem;
     }
 
     .service-content {
@@ -1206,7 +1218,8 @@
       margin-bottom: 12px;
       font-size: clamp(1.55rem, 2.6vw, 2.7rem);
       font-weight: 520;
-      letter-spacing: -0.045em;
+      letter-spacing: -0.025em;
+      text-wrap: balance;
     }
 
     .service-desc {
@@ -1277,8 +1290,9 @@
       max-width: 1100px;
       font-size: clamp(4rem, 10vw, 10rem);
       font-weight: 530;
-      letter-spacing: -0.08em;
-      line-height: 0.82;
+      letter-spacing: -0.04em;
+      line-height: 0.88;
+      text-wrap: balance;
     }
 
     .contact-title em {
@@ -1376,10 +1390,9 @@
 
     .qr-platform {
       color: rgba(16, 19, 16, 0.62);
-      font-size: 0.68rem;
-      font-weight: 750;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0;
     }
 
     .qr-handle {
@@ -1390,8 +1403,8 @@
     }
 
     .qr-hint {
-      color: rgba(16, 19, 16, 0.58);
-      font-size: 0.72rem;
+      color: rgba(16, 19, 16, 0.62);
+      font-size: 0.78rem;
       line-height: 1.55;
     }
 
@@ -1402,7 +1415,7 @@
       margin-top: 120px;
       padding-top: 22px;
       border-top: 1px solid rgba(16, 19, 16, 0.22);
-      font-size: 0.72rem;
+      font-size: 0.78rem;
     }
 
     .socials {
@@ -1490,6 +1503,7 @@
 
       .nav.is-open .nav-link {
         display: block;
+        min-height: 44px;
         padding: 12px;
       }
 
@@ -1632,21 +1646,35 @@
       }
 
       .hero-title {
-        font-size: clamp(3.8rem, 20vw, 6rem);
-        line-height: 0.83;
+        font-size: clamp(3.6rem, 18vw, 5.4rem);
+        line-height: 0.86;
+      }
+
+      .hero-title .accent {
+        font-size: 0.92em;
       }
 
       .hero-intro {
         max-width: 92%;
-        font-size: 0.95rem;
+        font-size: 1rem;
       }
 
       .section-title {
-        font-size: clamp(2.8rem, 15vw, 4.6rem);
+        font-size: clamp(2.6rem, 12vw, 3.15rem);
+        letter-spacing: -0.02em;
+        line-height: 1.02;
+      }
+
+      .section-title br {
+        display: none;
       }
 
       #services .section-title {
-        font-size: clamp(2.8rem, 12.5vw, 4.6rem);
+        font-size: clamp(2.6rem, 12vw, 3.15rem);
+      }
+
+      .section-note {
+        font-size: 0.95rem;
       }
 
       .portrait-card {
@@ -1695,7 +1723,12 @@
       }
 
       .work-project-title {
-        font-size: clamp(2.45rem, 12vw, 3.45rem);
+        font-size: clamp(2.35rem, 11.2vw, 3.15rem);
+        line-height: 1.02;
+      }
+
+      .work-project-description {
+        font-size: 1rem;
       }
 
       .work-project-body {
@@ -1807,6 +1840,8 @@
     @media (pointer: coarse) {
       .logo,
       .menu-button,
+      .nav-link,
+      .nav-cta,
       .contact-email,
       .footer a,
       .socials a {
@@ -1814,6 +1849,8 @@
       }
 
       .logo,
+      .nav-link,
+      .nav-cta,
       .contact-email,
       .footer a,
       .socials a {
@@ -1838,7 +1875,7 @@
   <header class="nav" id="nav">
     <a class="logo" href="#top" aria-label="回到首页">
       <span class="logo-mark">XL.</span>
-      <span>Xia Liyang</span>
+      <span lang="en">Xia Liyang</span>
     </a>
     <ul class="nav-links">
       <li><a class="nav-link" href="#about">关于我</a></li>
@@ -1856,8 +1893,8 @@
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-orb" aria-hidden="true"></div>
       <div class="container hero-content">
-        <p class="eyebrow reveal">Director · Cinematography · Post-Production</p>
-        <h1 class="hero-title reveal">
+        <p class="eyebrow reveal" lang="en">Director · Cinematography · Post-Production</p>
+        <h1 class="hero-title reveal" lang="en">
           Ideas into<br>
           <span class="outline">meaningful</span><br>
           <span class="accent">experiences.</span>
@@ -1871,14 +1908,14 @@
             你好，我是夏笠洋，一名关注叙事、品牌与影像表达的导演、摄影及后期创作者。我把复杂的想法，转化成清晰、克制且令人记住的影像作品。
           </p>
           <div class="scroll-hint">
-            <span>Scroll</span>
+            <span lang="en">Scroll</span>
             <span class="scroll-line"></span>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="marquee" aria-hidden="true">
+    <div class="marquee" aria-hidden="true" lang="en">
       <div class="marquee-track">
         <span>Direction <i>✦</i> Cinematography <i>✦</i> Post-Production <i>✦</i> Visual Storytelling <i>✦</i></span>
         <span>Direction <i>✦</i> Cinematography <i>✦</i> Post-Production <i>✦</i> Visual Storytelling <i>✦</i></span>
@@ -1889,7 +1926,7 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="section-number">01 / ABOUT</div>
+            <div class="section-number" lang="en">01 / ABOUT</div>
             <h2 class="section-title">不只追求好看，<br>更在意它为何存在。</h2>
           </div>
           <p class="section-note">导演、摄影与后期的多重经验，让创意判断贯穿从前期理解到最终成片的完整过程。</p>
@@ -1901,7 +1938,7 @@
               <img src="xia-liyang-portrait.webp" alt="夏笠洋在片场工作">
             </div>
             <figcaption class="portrait-caption">
-              <div><strong>夏笠洋</strong><span>XIA LIYANG</span></div>
+              <div><strong>夏笠洋</strong><span lang="en">XIA LIYANG</span></div>
               <small>导演 / 摄影 / 后期</small>
             </figcaption>
           </figure>
@@ -1935,7 +1972,7 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="section-number">02 / SELECTED WORKS</div>
+            <div class="section-number" lang="en">02 / SELECTED WORKS</div>
             <h2 class="section-title">从真实的人，<br>到具体的世界。</h2>
           </div>
           <p class="section-note">五部作品，记录人物、城市与生活的不同切面。从纪录片、个人短片到品牌影像，我关注真实经验，也关注画面如何让它被看见。</p>
@@ -1944,7 +1981,7 @@
         <div class="work-list">
           <article class="work-project reveal">
             <div class="work-project-head">
-              <div><span class="work-project-index">01 / DOCUMENTARY</span><span class="work-project-type">Independent Documentary<br>Hainan · 2026</span></div>
+              <div lang="en"><span class="work-project-index">01 / DOCUMENTARY</span><span class="work-project-type">Independent Documentary<br>Hainan · 2026</span></div>
               <div><h3 class="work-project-title">《选择》</h3><p class="work-project-subtitle">一种生活的答案。</p></div>
             </div>
             <div class="work-gallery" aria-label="《选择》封面与剧照">
@@ -1964,7 +2001,7 @@
 
           <article class="work-project reveal">
             <div class="work-project-head">
-              <div><span class="work-project-index">02 / SHORT FILM</span><span class="work-project-type">Personal Short Film<br>Summer · Almost Fall</span></div>
+              <div lang="en"><span class="work-project-index">02 / SHORT FILM</span><span class="work-project-type">Personal Short Film<br>Summer · Almost Fall</span></div>
               <div><h3 class="work-project-title">《暑假还剩些许天》</h3><p class="work-project-subtitle">把夏天留在车窗、风景和一段未完的回望里。</p></div>
             </div>
             <div class="work-gallery" aria-label="《暑假还剩些许天》封面与剧照">
@@ -1984,7 +2021,7 @@
 
           <article class="work-project reveal">
             <div class="work-project-head">
-              <div><span class="work-project-index">03 / GRADUATION FILM</span><span class="work-project-type">Youth &amp; Future<br>Campus · 2026</span></div>
+              <div lang="en"><span class="work-project-index">03 / GRADUATION FILM</span><span class="work-project-type">Youth &amp; Future<br>Campus · 2026</span></div>
               <div><h3 class="work-project-title">《微光初照》</h3><p class="work-project-subtitle">高考不是终点，是人生刚刚亮起的微光。</p></div>
             </div>
             <div class="work-gallery" aria-label="《微光初照》封面与剧照">
@@ -2004,7 +2041,7 @@
 
           <article class="work-project reveal">
             <div class="work-project-head">
-              <div><span class="work-project-index">04 / BRAND FILM</span><span class="work-project-type">Mid-Autumn Campaign<br>City · People · Care</span></div>
+              <div lang="en"><span class="work-project-index">04 / BRAND FILM</span><span class="work-project-type">Mid-Autumn Campaign<br>City · People · Care</span></div>
               <div><h3 class="work-project-title">《月过山海，万家灯和》</h3><p class="work-project-subtitle">把中秋的温暖，送给每一份平凡的坚守。</p></div>
             </div>
             <div class="work-gallery" aria-label="《月过山海，万家灯和》封面与剧照">
@@ -2024,7 +2061,7 @@
 
           <article class="work-project reveal">
             <div class="work-project-head">
-              <div><span class="work-project-index">05 / MOTION BRAND FILM</span><span class="work-project-type">Wuhan Optics Valley Culture<br>3D · Motion · City</span></div>
+              <div lang="en"><span class="work-project-index">05 / MOTION BRAND FILM</span><span class="work-project-type">Wuhan Optics Valley Culture<br>3D · Motion · City</span></div>
               <div><h3 class="work-project-title">《一拍即合，万象新生》</h3><p class="work-project-subtitle">让城市的不同想象，在一拍之间发生。</p></div>
             </div>
             <div class="work-gallery" aria-label="《一拍即合，万象新生》封面与剧照">
@@ -2049,7 +2086,7 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="section-number">03 / EXPERIENCE</div>
+            <div class="section-number" lang="en">03 / EXPERIENCE</div>
             <h2 class="section-title">从片场执行，<br>到国际影展。</h2>
           </div>
           <p class="section-note">代表荣誉与近年国际影展经历，记录持续创作的轨迹。</p>
@@ -2058,7 +2095,7 @@
         <div class="experience-grid">
           <article class="recognition-card reveal">
             <div>
-              <div class="recognition-kicker">Selected Recognition</div>
+              <div class="recognition-kicker" lang="en">Selected Recognition</div>
               <h3 class="recognition-title">关键作品与<br>代表荣誉。</h3>
             </div>
             <ol class="award-list">
@@ -2069,7 +2106,7 @@
           </article>
 
           <div class="timeline-panel reveal">
-            <div class="timeline-kicker">Festival Journey · 2023-2025</div>
+            <div class="timeline-kicker" lang="en">Festival Journey · 2023-2025</div>
             <div class="timeline">
               <div class="timeline-item"><span class="timeline-year">2023</span><p>短片入选 Pebbles Underground。</p></div>
               <div class="timeline-item"><span class="timeline-year">2024</span><p>入选 Wirksworth Horror Film Festival；获 Absurd Film Festival 最佳超短片，并获 Happenstance Horror Fest 荣誉提名。</p></div>
@@ -2085,7 +2122,7 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="section-number">04 / CAPABILITIES</div>
+            <div class="section-number" lang="en">04 / CAPABILITIES</div>
             <h2 class="section-title">从想法，到画面<br>最终落地。</h2>
           </div>
           <p class="section-note">工作重心集中于导演、摄影与后期，让创意表达和制作执行保持一致。</p>
@@ -2110,7 +2147,7 @@
 
     <section class="contact" id="contact">
       <div class="container">
-        <div class="contact-label reveal">Have a project in mind?</div>
+        <div class="contact-label reveal" lang="en">Have a project in mind?</div>
         <h2 class="contact-title reveal">让我们做点<br><em>值得记住</em>的事。</h2>
         <div class="contact-row reveal">
           <div class="contact-status">
