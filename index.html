@@ -2,9 +2,9 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="夏笠洋，导演、摄影及后期创作者个人简介与作品集。">
-  <title>夏笠洋 — Director / Cinematography / Post</title>
+  <title>夏笠洋 | Director / Cinematography / Post</title>
   <style>
     :root {
       --bg: #0a0c0c;
@@ -63,6 +63,15 @@
     button {
       color: inherit;
       font: inherit;
+    }
+
+    :where(a, button):focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .contact :where(a, button):focus-visible {
+      outline-color: #101310;
     }
 
     ::selection {
@@ -181,8 +190,8 @@
 
     .menu-button {
       display: none;
-      width: 43px;
-      height: 43px;
+      width: 44px;
+      height: 44px;
       border: 1px solid var(--line);
       border-radius: 50%;
       background: transparent;
@@ -842,6 +851,7 @@
       width: 100vw;
       max-width: none;
       height: 100vh;
+      height: 100dvh;
       max-height: none;
       padding: 0;
       border: 0;
@@ -1592,10 +1602,22 @@
       }
     }
 
+    @media (max-width: 767px) {
+      .work-gallery .work-image-button:nth-child(2),
+      .work-gallery .work-image-button:nth-child(5),
+      .work-gallery .work-image-button:nth-child(8) {
+        grid-column: 1 / -1;
+      }
+    }
+
     @media (max-width: 560px) {
       .nav {
-        top: 10px;
+        top: max(10px, env(safe-area-inset-top));
         width: calc(100% - 20px);
+      }
+
+      .hero-grid {
+        opacity: 0.12;
       }
 
       .hero {
@@ -1681,7 +1703,7 @@
       }
 
       .work-gallery {
-        gap: 5px;
+        gap: 8px 6px;
       }
 
       .work-image-button,
@@ -1705,8 +1727,8 @@
       .lightbox-nav {
         top: auto;
         bottom: 17px;
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
         transform: none;
       }
 
@@ -1778,6 +1800,25 @@
         flex-direction: column;
         gap: 18px;
         margin-top: 80px;
+        padding-bottom: max(18px, env(safe-area-inset-bottom));
+      }
+    }
+
+    @media (pointer: coarse) {
+      .logo,
+      .menu-button,
+      .contact-email,
+      .footer a,
+      .socials a {
+        min-height: 44px;
+      }
+
+      .logo,
+      .contact-email,
+      .footer a,
+      .socials a {
+        display: inline-flex;
+        align-items: center;
       }
     }
 
@@ -1907,7 +1948,7 @@
               <div><h3 class="work-project-title">《选择》</h3><p class="work-project-subtitle">一种生活的答案。</p></div>
             </div>
             <div class="work-gallery" aria-label="《选择》封面与剧照">
-              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《选择》 · 封面"><img src="assets/works/xuanze/cover.webp" alt="《选择》封面" loading="eager"></button>
+              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《选择》 · 封面"><img src="assets/works/xuanze/cover.webp" alt="《选择》封面" width="996" height="562" loading="eager"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《选择》 · 剧照 01"><img src="assets/works/xuanze/01.webp" alt="《选择》剧照 01" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《选择》 · 剧照 02"><img src="assets/works/xuanze/02.webp" alt="《选择》剧照 02" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《选择》 · 剧照 03"><img src="assets/works/xuanze/03.webp" alt="《选择》剧照 03" loading="lazy"></button>
@@ -1927,7 +1968,7 @@
               <div><h3 class="work-project-title">《暑假还剩些许天》</h3><p class="work-project-subtitle">把夏天留在车窗、风景和一段未完的回望里。</p></div>
             </div>
             <div class="work-gallery" aria-label="《暑假还剩些许天》封面与剧照">
-              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《暑假还剩些许天》 · 封面"><img src="assets/works/shujia/cover.webp" alt="《暑假还剩些许天》封面" loading="lazy"></button>
+              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《暑假还剩些许天》 · 封面"><img src="assets/works/shujia/cover.webp" alt="《暑假还剩些许天》封面" width="1202" height="804" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《暑假还剩些许天》 · 剧照 01"><img src="assets/works/shujia/01.webp" alt="《暑假还剩些许天》剧照 01" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《暑假还剩些许天》 · 剧照 02"><img src="assets/works/shujia/02.webp" alt="《暑假还剩些许天》剧照 02" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《暑假还剩些许天》 · 剧照 03"><img src="assets/works/shujia/03.webp" alt="《暑假还剩些许天》剧照 03" loading="lazy"></button>
@@ -1947,7 +1988,7 @@
               <div><h3 class="work-project-title">《微光初照》</h3><p class="work-project-subtitle">高考不是终点，是人生刚刚亮起的微光。</p></div>
             </div>
             <div class="work-gallery" aria-label="《微光初照》封面与剧照">
-              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《微光初照》 · 封面"><img src="assets/works/weiguang/cover.webp" alt="《微光初照》封面" loading="lazy"></button>
+              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《微光初照》 · 封面"><img src="assets/works/weiguang/cover.webp" alt="《微光初照》封面" width="1600" height="1060" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《微光初照》 · 剧照 01"><img src="assets/works/weiguang/01.webp" alt="《微光初照》剧照 01" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《微光初照》 · 剧照 02"><img src="assets/works/weiguang/02.webp" alt="《微光初照》剧照 02" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《微光初照》 · 剧照 03"><img src="assets/works/weiguang/03.webp" alt="《微光初照》剧照 03" loading="lazy"></button>
@@ -1967,7 +2008,7 @@
               <div><h3 class="work-project-title">《月过山海，万家灯和》</h3><p class="work-project-subtitle">把中秋的温暖，送给每一份平凡的坚守。</p></div>
             </div>
             <div class="work-gallery" aria-label="《月过山海，万家灯和》封面与剧照">
-              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《月过山海，万家灯和》 · 封面"><img src="assets/works/yueguo/cover.webp" alt="《月过山海，万家灯和》封面" loading="lazy"></button>
+              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《月过山海，万家灯和》 · 封面"><img src="assets/works/yueguo/cover.webp" alt="《月过山海，万家灯和》封面" width="1600" height="1200" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《月过山海，万家灯和》 · 剧照 01"><img src="assets/works/yueguo/01.webp" alt="《月过山海，万家灯和》剧照 01" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《月过山海，万家灯和》 · 剧照 02"><img src="assets/works/yueguo/02.webp" alt="《月过山海，万家灯和》剧照 02" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《月过山海，万家灯和》 · 剧照 03"><img src="assets/works/yueguo/03.webp" alt="《月过山海，万家灯和》剧照 03" loading="lazy"></button>
@@ -1987,7 +2028,7 @@
               <div><h3 class="work-project-title">《一拍即合，万象新生》</h3><p class="work-project-subtitle">让城市的不同想象，在一拍之间发生。</p></div>
             </div>
             <div class="work-gallery" aria-label="《一拍即合，万象新生》封面与剧照">
-              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《一拍即合，万象新生》 · 封面"><img src="assets/works/yipai/cover.webp" alt="《一拍即合，万象新生》封面" loading="lazy"></button>
+              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《一拍即合，万象新生》 · 封面"><img src="assets/works/yipai/cover.webp" alt="《一拍即合，万象新生》封面" width="1600" height="894" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《一拍即合，万象新生》 · 剧照 01"><img src="assets/works/yipai/01.webp" alt="《一拍即合，万象新生》剧照 01" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《一拍即合，万象新生》 · 剧照 02"><img src="assets/works/yipai/02.webp" alt="《一拍即合，万象新生》剧照 02" loading="lazy"></button>
               <button class="work-image-button" type="button" data-lightbox-title="《一拍即合，万象新生》 · 剧照 03"><img src="assets/works/yipai/03.webp" alt="《一拍即合，万象新生》剧照 03" loading="lazy"></button>
@@ -2028,7 +2069,7 @@
           </article>
 
           <div class="timeline-panel reveal">
-            <div class="timeline-kicker">Festival Journey · 2023–2025</div>
+            <div class="timeline-kicker">Festival Journey · 2023-2025</div>
             <div class="timeline">
               <div class="timeline-item"><span class="timeline-year">2023</span><p>短片入选 Pebbles Underground。</p></div>
               <div class="timeline-item"><span class="timeline-year">2024</span><p>入选 Wirksworth Horror Film Festival；获 Absurd Film Festival 最佳超短片，并获 Happenstance Horror Fest 荣誉提名。</p></div>
@@ -2108,7 +2149,7 @@
       <div class="lightbox-inner">
         <button class="lightbox-close" type="button" aria-label="关闭预览">×</button>
         <button class="lightbox-nav lightbox-prev" type="button" aria-label="上一张">‹</button>
-        <img class="lightbox-image" alt="">
+        <img class="lightbox-image" src="assets/works/xuanze/cover.webp" alt="《选择》封面" width="996" height="562">
         <p class="lightbox-caption"></p>
         <button class="lightbox-nav lightbox-next" type="button" aria-label="下一张">›</button>
       </div>
@@ -2134,24 +2175,30 @@
     }
 
     const stats = document.querySelectorAll('[data-count]');
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const target = Number(entry.target.dataset.count);
-        const start = performance.now();
-        const duration = 1200;
-        const suffix = entry.target.dataset.suffix ?? '+';
-        const tick = (now) => {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          entry.target.textContent = Math.round(target * eased) + suffix;
-          if (progress < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-        statsObserver.unobserve(entry.target);
+    if (reduceMotion) {
+      stats.forEach((stat) => {
+        stat.textContent = stat.dataset.count + (stat.dataset.suffix ?? '+');
       });
-    }, { threshold: 0.8 });
-    stats.forEach((stat) => statsObserver.observe(stat));
+    } else {
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const target = Number(entry.target.dataset.count);
+          const start = performance.now();
+          const duration = 1200;
+          const suffix = entry.target.dataset.suffix ?? '+';
+          const tick = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            entry.target.textContent = Math.round(target * eased) + suffix;
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          statsObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.8 });
+      stats.forEach((stat) => statsObserver.observe(stat));
+    }
 
     const glow = document.querySelector('.cursor-glow');
     if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
