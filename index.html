@@ -667,111 +667,105 @@
       background: #0d1010;
     }
 
-    .featured-work {
-      padding-top: 24px;
+    .work-list {
+      display: grid;
+      gap: 148px;
+    }
+
+    .work-project {
+      padding-top: 26px;
       border-top: 1px solid var(--line);
     }
 
-    .featured-media {
-      position: relative;
+    .work-project-head {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      grid-template-columns: minmax(170px, 0.46fr) minmax(0, 1.54fr);
+      gap: 56px;
+      align-items: start;
+      margin-bottom: 42px;
     }
 
-    .featured-frame {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #050606;
-    }
-
-    .featured-frame--hero {
-      grid-column: 1 / -1;
-      border-radius: 18px;
-    }
-
-    .featured-frame img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
-    }
-
-    .featured-frame:hover img {
-      transform: scale(1.025);
-    }
-
-    .featured-badge {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      z-index: 2;
-      padding: 9px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 999px;
-      color: #f2f3ec;
-      background: rgba(7, 9, 8, 0.68);
-      font-size: 0.66rem;
-      letter-spacing: 0.12em;
-      pointer-events: none;
-      backdrop-filter: blur(12px);
-    }
-
-    .featured-copy {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.58fr);
-      gap: 64px;
-      align-items: end;
-      padding: 38px 4px 0;
-    }
-
-    .featured-eyebrow {
-      margin-bottom: 15px;
+    .work-project-index {
       color: var(--accent);
       font-size: 0.7rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .featured-title {
-      max-width: 850px;
-      font-size: clamp(2.2rem, 4.4vw, 5rem);
+    .work-project-type {
+      display: block;
+      margin-top: 12px;
+      color: #777f79;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    .work-project-title {
+      max-width: 980px;
+      font-size: clamp(2.7rem, 5.7vw, 6.4rem);
       font-weight: 520;
       letter-spacing: -0.06em;
-      line-height: 0.98;
+      line-height: 0.94;
     }
 
-    .featured-description {
-      max-width: 720px;
-      margin-top: 20px;
+    .work-project-subtitle {
+      margin-top: 22px;
+      color: #c4cac5;
+      font-size: clamp(1.1rem, 2vw, 1.55rem);
+      line-height: 1.5;
+    }
+
+    .work-project-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(290px, 0.55fr);
+      gap: 64px;
+      align-items: start;
+      margin: 32px 0 44px;
+    }
+
+    .work-project-description {
+      max-width: 760px;
       color: #a7aea8;
-      font-size: 0.95rem;
-      line-height: 1.8;
+      font-size: 0.96rem;
+      line-height: 1.85;
     }
 
-    .featured-actions {
-      display: flex;
-      align-items: flex-end;
-      flex-direction: column;
-      gap: 26px;
+    .work-project-info {
+      display: grid;
+      gap: 18px;
+    }
+
+    .work-role {
+      display: grid;
+      gap: 7px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+      color: #d9ddd8;
+      font-size: 0.84rem;
+      line-height: 1.6;
+    }
+
+    .work-role b {
+      color: #747c76;
+      font-size: 0.66rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
     }
 
     .work-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 18px;
-      justify-content: flex-end;
+      gap: 8px 16px;
       color: #858d87;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       letter-spacing: 0.08em;
-      text-transform: uppercase;
     }
 
     .work-button {
+      width: fit-content;
+      margin-top: 8px;
       color: #101310;
       background: var(--accent);
     }
@@ -779,6 +773,145 @@
     .work-button:hover {
       background: var(--ink);
       transform: translateY(-3px);
+    }
+
+    .work-button--disabled {
+      color: #9aa19b;
+      border: 1px solid var(--line);
+      background: transparent;
+      cursor: default;
+    }
+
+    .work-button--disabled:hover {
+      color: #9aa19b;
+      background: transparent;
+      transform: none;
+    }
+
+    .work-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .work-image-button {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 0;
+      border-radius: 6px;
+      background: #171b1a;
+      cursor: zoom-in;
+    }
+
+    .work-image-button--cover {
+      grid-column: 1 / -1;
+      aspect-ratio: auto;
+      border-radius: 8px;
+    }
+
+    .work-image-button img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(.2,.8,.2,1), opacity 0.3s ease;
+    }
+
+    .work-image-button--cover img {
+      height: auto;
+      object-fit: contain;
+    }
+
+    .work-image-button::after {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: inherit;
+      content: "";
+      pointer-events: none;
+    }
+
+    .work-image-button:hover img {
+      opacity: 0.88;
+      transform: scale(1.025);
+    }
+
+    .lightbox {
+      width: 100vw;
+      max-width: none;
+      height: 100vh;
+      max-height: none;
+      padding: 0;
+      border: 0;
+      color: var(--ink);
+      background: rgba(5, 7, 7, 0.97);
+    }
+
+    .lightbox::backdrop {
+      background: rgba(0, 0, 0, 0.88);
+    }
+
+    .lightbox-inner {
+      position: relative;
+      display: grid;
+      width: 100%;
+      height: 100%;
+      grid-template-rows: minmax(0, 1fr) auto;
+      place-items: center;
+      padding: 72px 84px 34px;
+    }
+
+    .lightbox-image {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .lightbox-caption {
+      padding-top: 20px;
+      color: #aeb5af;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .lightbox-close,
+    .lightbox-nav {
+      position: absolute;
+      z-index: 2;
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 50%;
+      color: var(--ink);
+      background: rgba(10, 12, 12, 0.7);
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+    }
+
+    .lightbox-close {
+      top: 20px;
+      right: 24px;
+      font-size: 1.4rem;
+    }
+
+    .lightbox-nav {
+      top: 50%;
+      font-size: 2rem;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-prev {
+      left: 24px;
+    }
+
+    .lightbox-next {
+      right: 24px;
     }
 
     .project-list {
@@ -1189,6 +1322,69 @@
       letter-spacing: 0.08em;
     }
 
+    .qr-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 64px;
+    }
+
+    .qr-item {
+      display: grid;
+      grid-template-columns: minmax(128px, 0.7fr) minmax(130px, 1fr);
+      gap: 22px;
+      align-items: center;
+      padding: 18px;
+      border: 1px solid rgba(16, 19, 16, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .qr-visual {
+      display: grid;
+      width: 100%;
+      aspect-ratio: 1;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .qr-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .qr-copy {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .qr-platform {
+      color: rgba(16, 19, 16, 0.62);
+      font-size: 0.68rem;
+      font-weight: 750;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .qr-handle {
+      color: #101310;
+      font-size: clamp(1.25rem, 2vw, 1.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .qr-hint {
+      color: rgba(16, 19, 16, 0.58);
+      font-size: 0.72rem;
+      line-height: 1.55;
+    }
+
     .footer {
       display: flex;
       align-items: center;
@@ -1340,17 +1536,34 @@
         grid-template-columns: 1fr;
       }
 
-      .featured-copy {
+      .work-list {
+        gap: 110px;
+      }
+
+      .work-project-head,
+      .work-project-body {
         grid-template-columns: 1fr;
-        gap: 34px;
+        gap: 28px;
       }
 
-      .featured-actions {
-        align-items: flex-start;
+      .work-project-head {
+        margin-bottom: 32px;
       }
 
-      .work-meta {
-        justify-content: flex-start;
+      .work-project-body {
+        margin-top: 28px;
+      }
+
+      .work-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .qr-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .qr-item {
+        grid-template-columns: 190px minmax(0, 1fr);
       }
 
       .recognition-card {
@@ -1451,26 +1664,58 @@
         padding-left: 78px;
       }
 
-      .featured-media {
-        gap: 6px;
+      .work-list {
+        gap: 88px;
       }
 
-      .featured-frame,
-      .featured-frame--hero {
-        border-radius: 8px;
+      .work-project {
+        padding-top: 20px;
       }
 
-      .featured-badge {
-        top: 10px;
-        left: 10px;
+      .work-project-title {
+        font-size: clamp(2.45rem, 12vw, 3.45rem);
       }
 
-      .featured-title {
-        font-size: clamp(2.25rem, 11.5vw, 3.2rem);
+      .work-project-body {
+        margin-bottom: 34px;
+      }
+
+      .work-gallery {
+        gap: 5px;
+      }
+
+      .work-image-button,
+      .work-image-button--cover {
+        border-radius: 4px;
       }
 
       .work-button {
         width: 100%;
+      }
+
+      .lightbox-inner {
+        padding: 64px 12px 26px;
+      }
+
+      .lightbox-close {
+        top: 10px;
+        right: 12px;
+      }
+
+      .lightbox-nav {
+        top: auto;
+        bottom: 17px;
+        width: 42px;
+        height: 42px;
+        transform: none;
+      }
+
+      .lightbox-prev {
+        left: 12px;
+      }
+
+      .lightbox-next {
+        right: 12px;
       }
 
       .project-card {
@@ -1515,6 +1760,17 @@
       .contact-meta {
         flex-direction: column;
         gap: 8px;
+      }
+
+      .qr-grid {
+        gap: 10px;
+        margin-top: 48px;
+      }
+
+      .qr-item {
+        grid-template-columns: 132px minmax(0, 1fr);
+        gap: 18px;
+        padding: 12px;
       }
 
       .footer {
@@ -1638,42 +1894,113 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="section-number">02 / SELECTED WORK</div>
-            <h2 class="section-title">《选择》<br>一种生活的答案。</h2>
+            <div class="section-number">02 / SELECTED WORKS</div>
+            <h2 class="section-title">从真实的人，<br>到具体的世界。</h2>
           </div>
-          <p class="section-note">以海南为坐标，记录一群追浪者如何重新选择生活。</p>
+          <p class="section-note">五部作品，记录人物、城市与生活的不同切面。从纪录片、个人短片到品牌影像，我关注真实经验，也关注画面如何让它被看见。</p>
         </div>
 
-        <article class="featured-work reveal">
-          <div class="featured-media" aria-label="纪录片《选择》精选剧照">
-            <figure class="featured-frame featured-frame--hero">
-              <img src="xuanze-cover.webp" alt="纪录片《选择》封面" loading="eager">
-            </figure>
-            <figure class="featured-frame">
-              <img src="xuanze-still-family.webp" alt="《选择》海边人物剧照" loading="lazy">
-            </figure>
-            <figure class="featured-frame">
-              <img src="xuanze-still-journey.webp" alt="《选择》人物旅途剧照" loading="lazy">
-            </figure>
-            <span class="featured-badge">PROJECT STILLS · 03</span>
-          </div>
-          <div class="featured-copy">
-            <div>
-              <div class="featured-eyebrow">Independent Documentary · Hainan</div>
-              <h3 class="featured-title">一群追浪的人，为什么选择留在海南？</h3>
-              <p class="featured-description">有人为了海浪来到海南，也有人在这里重新定义生活。《选择》从人物的真实经验出发，记录他们如何面对去留、自由与另一种生活方式。</p>
+        <div class="work-list">
+          <article class="work-project reveal">
+            <div class="work-project-head">
+              <div><span class="work-project-index">01 / DOCUMENTARY</span><span class="work-project-type">Independent Documentary<br>Hainan · 2026</span></div>
+              <div><h3 class="work-project-title">《选择》</h3><p class="work-project-subtitle">一种生活的答案。</p></div>
             </div>
-            <div class="featured-actions">
-              <div class="work-meta">
-                <span>独立纪录片</span>
-                <span>人物纪实</span>
-                <span>海南</span>
-                <span>精选剧照</span>
-              </div>
-              <a class="button work-button" href="https://www.xinpianchang.com/a13397302?from=webShare&amp;channel=copyLink" target="_blank" rel="noopener noreferrer">新片场观看完整作品 <span>↗</span></a>
+            <div class="work-gallery" aria-label="《选择》封面与剧照">
+              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《选择》 · 封面"><img src="assets/works/xuanze/cover.webp" alt="《选择》封面" loading="eager"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《选择》 · 剧照 01"><img src="assets/works/xuanze/01.webp" alt="《选择》剧照 01" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《选择》 · 剧照 02"><img src="assets/works/xuanze/02.webp" alt="《选择》剧照 02" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《选择》 · 剧照 03"><img src="assets/works/xuanze/03.webp" alt="《选择》剧照 03" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《选择》 · 剧照 04"><img src="assets/works/xuanze/04.webp" alt="《选择》剧照 04" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《选择》 · 剧照 05"><img src="assets/works/xuanze/05.webp" alt="《选择》剧照 05" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《选择》 · 剧照 06"><img src="assets/works/xuanze/06.webp" alt="《选择》剧照 06" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《选择》 · 剧照 07"><img src="assets/works/xuanze/07.webp" alt="《选择》剧照 07" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《选择》 · 剧照 08"><img src="assets/works/xuanze/08.webp" alt="《选择》剧照 08" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《选择》 · 剧照 09"><img src="assets/works/xuanze/09.webp" alt="《选择》剧照 09" loading="lazy"></button>
             </div>
-          </div>
-        </article>
+            <div class="work-project-body"><p class="work-project-description">有人为了海浪来到海南，也有人在这里重新定义生活。《选择》从人物的真实经验出发，记录他们如何面对去留、自由与另一种生活方式。</p><div class="work-project-info"><div class="work-role"><b>职责</b><span>导演 · 剪辑 · 调色</span></div><div class="work-meta"><span>独立纪录片</span><span>人物纪实</span><span>海南</span></div><a class="button work-button" href="https://www.xinpianchang.com/a13397302?from=webShare&amp;channel=copyLink" target="_blank" rel="noopener noreferrer">新片场观看完整作品 <span>↗</span></a></div></div>
+          </article>
+
+          <article class="work-project reveal">
+            <div class="work-project-head">
+              <div><span class="work-project-index">02 / SHORT FILM</span><span class="work-project-type">Personal Short Film<br>Summer · Almost Fall</span></div>
+              <div><h3 class="work-project-title">《暑假还剩些许天》</h3><p class="work-project-subtitle">把夏天留在车窗、风景和一段未完的回望里。</p></div>
+            </div>
+            <div class="work-gallery" aria-label="《暑假还剩些许天》封面与剧照">
+              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《暑假还剩些许天》 · 封面"><img src="assets/works/shujia/cover.webp" alt="《暑假还剩些许天》封面" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《暑假还剩些许天》 · 剧照 01"><img src="assets/works/shujia/01.webp" alt="《暑假还剩些许天》剧照 01" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《暑假还剩些许天》 · 剧照 02"><img src="assets/works/shujia/02.webp" alt="《暑假还剩些许天》剧照 02" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《暑假还剩些许天》 · 剧照 03"><img src="assets/works/shujia/03.webp" alt="《暑假还剩些许天》剧照 03" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《暑假还剩些许天》 · 剧照 04"><img src="assets/works/shujia/04.webp" alt="《暑假还剩些许天》剧照 04" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《暑假还剩些许天》 · 剧照 05"><img src="assets/works/shujia/05.webp" alt="《暑假还剩些许天》剧照 05" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《暑假还剩些许天》 · 剧照 06"><img src="assets/works/shujia/06.webp" alt="《暑假还剩些许天》剧照 06" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《暑假还剩些许天》 · 剧照 07"><img src="assets/works/shujia/07.webp" alt="《暑假还剩些许天》剧照 07" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《暑假还剩些许天》 · 剧照 08"><img src="assets/works/shujia/08.webp" alt="《暑假还剩些许天》剧照 08" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《暑假还剩些许天》 · 剧照 09"><img src="assets/works/shujia/09.webp" alt="《暑假还剩些许天》剧照 09" loading="lazy"></button>
+            </div>
+            <div class="work-project-body"><p class="work-project-description">一段发生在夏日尾声的个人短片。车窗、风景与停留交错在一起，写下关于成长、告别和还没来得及说完的话。</p><div class="work-project-info"><div class="work-role"><b>职责</b><span>摄影指导 · 剪辑 · 调色</span></div><div class="work-meta"><span>个人短片</span><span>夏日叙事</span><span>情绪影像</span></div><span class="button work-button work-button--disabled" aria-label="影片暂未公开">影片暂未公开</span></div></div>
+          </article>
+
+          <article class="work-project reveal">
+            <div class="work-project-head">
+              <div><span class="work-project-index">03 / GRADUATION FILM</span><span class="work-project-type">Youth &amp; Future<br>Campus · 2026</span></div>
+              <div><h3 class="work-project-title">《微光初照》</h3><p class="work-project-subtitle">高考不是终点，是人生刚刚亮起的微光。</p></div>
+            </div>
+            <div class="work-gallery" aria-label="《微光初照》封面与剧照">
+              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《微光初照》 · 封面"><img src="assets/works/weiguang/cover.webp" alt="《微光初照》封面" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《微光初照》 · 剧照 01"><img src="assets/works/weiguang/01.webp" alt="《微光初照》剧照 01" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《微光初照》 · 剧照 02"><img src="assets/works/weiguang/02.webp" alt="《微光初照》剧照 02" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《微光初照》 · 剧照 03"><img src="assets/works/weiguang/03.webp" alt="《微光初照》剧照 03" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《微光初照》 · 剧照 04"><img src="assets/works/weiguang/04.webp" alt="《微光初照》剧照 04" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《微光初照》 · 剧照 05"><img src="assets/works/weiguang/05.webp" alt="《微光初照》剧照 05" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《微光初照》 · 剧照 06"><img src="assets/works/weiguang/06.webp" alt="《微光初照》剧照 06" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《微光初照》 · 剧照 07"><img src="assets/works/weiguang/07.webp" alt="《微光初照》剧照 07" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《微光初照》 · 剧照 08"><img src="assets/works/weiguang/08.webp" alt="《微光初照》剧照 08" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《微光初照》 · 剧照 09"><img src="assets/works/weiguang/09.webp" alt="《微光初照》剧照 09" loading="lazy"></button>
+            </div>
+            <div class="work-project-body"><p class="work-project-description">影片将镜头留给即将走向未来的毕业生。高考不是人生的答案，而是一个新的开始；每个孩子都拥有尚待展开的无限可能，此刻，不过是微光初照。</p><div class="work-project-info"><div class="work-role"><b>职责</b><span>导演 · 剪辑 · 调色</span></div><div class="work-meta"><span>毕业主题片</span><span>青春叙事</span><span>未来祝愿</span></div><a class="button work-button" href="https://www.xinpianchang.com/a13358260?from=webShare&amp;channel=copyLink" target="_blank" rel="noopener noreferrer">新片场观看完整作品 <span>↗</span></a></div></div>
+          </article>
+
+          <article class="work-project reveal">
+            <div class="work-project-head">
+              <div><span class="work-project-index">04 / BRAND FILM</span><span class="work-project-type">Mid-Autumn Campaign<br>City · People · Care</span></div>
+              <div><h3 class="work-project-title">《月过山海，万家灯和》</h3><p class="work-project-subtitle">把中秋的温暖，送给每一份平凡的坚守。</p></div>
+            </div>
+            <div class="work-gallery" aria-label="《月过山海，万家灯和》封面与剧照">
+              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《月过山海，万家灯和》 · 封面"><img src="assets/works/yueguo/cover.webp" alt="《月过山海，万家灯和》封面" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《月过山海，万家灯和》 · 剧照 01"><img src="assets/works/yueguo/01.webp" alt="《月过山海，万家灯和》剧照 01" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《月过山海，万家灯和》 · 剧照 02"><img src="assets/works/yueguo/02.webp" alt="《月过山海，万家灯和》剧照 02" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《月过山海，万家灯和》 · 剧照 03"><img src="assets/works/yueguo/03.webp" alt="《月过山海，万家灯和》剧照 03" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《月过山海，万家灯和》 · 剧照 04"><img src="assets/works/yueguo/04.webp" alt="《月过山海，万家灯和》剧照 04" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《月过山海，万家灯和》 · 剧照 05"><img src="assets/works/yueguo/05.webp" alt="《月过山海，万家灯和》剧照 05" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《月过山海，万家灯和》 · 剧照 06"><img src="assets/works/yueguo/06.webp" alt="《月过山海，万家灯和》剧照 06" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《月过山海，万家灯和》 · 剧照 07"><img src="assets/works/yueguo/07.webp" alt="《月过山海，万家灯和》剧照 07" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《月过山海，万家灯和》 · 剧照 08"><img src="assets/works/yueguo/08.webp" alt="《月过山海，万家灯和》剧照 08" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《月过山海，万家灯和》 · 剧照 09"><img src="assets/works/yueguo/09.webp" alt="《月过山海，万家灯和》剧照 09" loading="lazy"></button>
+            </div>
+            <div class="work-project-body"><p class="work-project-description">中秋这一天，保利物业将一份节日的温暖，送到城市中那些默默付出的普通劳动者身边。镜头记录下每一次相遇与心意，也向每一份平凡而真切的坚守致敬。</p><div class="work-project-info"><div class="work-role"><b>职责</b><span>导演 · 剪辑 · 调色</span></div><div class="work-meta"><span>品牌主题片</span><span>城市人文</span><span>中秋企划</span></div><a class="button work-button" href="https://www.xinpianchang.com/a13796187?from=webShare&amp;channel=copyLink" target="_blank" rel="noopener noreferrer">新片场观看完整作品 <span>↗</span></a></div></div>
+          </article>
+
+          <article class="work-project reveal">
+            <div class="work-project-head">
+              <div><span class="work-project-index">05 / MOTION BRAND FILM</span><span class="work-project-type">Wuhan Optics Valley Culture<br>3D · Motion · City</span></div>
+              <div><h3 class="work-project-title">《一拍即合，万象新生》</h3><p class="work-project-subtitle">让城市的不同想象，在一拍之间发生。</p></div>
+            </div>
+            <div class="work-gallery" aria-label="《一拍即合，万象新生》封面与剧照">
+              <button class="work-image-button work-image-button--cover" type="button" data-lightbox-title="《一拍即合，万象新生》 · 封面"><img src="assets/works/yipai/cover.webp" alt="《一拍即合，万象新生》封面" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《一拍即合，万象新生》 · 剧照 01"><img src="assets/works/yipai/01.webp" alt="《一拍即合，万象新生》剧照 01" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《一拍即合，万象新生》 · 剧照 02"><img src="assets/works/yipai/02.webp" alt="《一拍即合，万象新生》剧照 02" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《一拍即合，万象新生》 · 剧照 03"><img src="assets/works/yipai/03.webp" alt="《一拍即合，万象新生》剧照 03" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《一拍即合，万象新生》 · 剧照 04"><img src="assets/works/yipai/04.webp" alt="《一拍即合，万象新生》剧照 04" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《一拍即合，万象新生》 · 剧照 05"><img src="assets/works/yipai/05.webp" alt="《一拍即合，万象新生》剧照 05" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《一拍即合，万象新生》 · 剧照 06"><img src="assets/works/yipai/06.webp" alt="《一拍即合，万象新生》剧照 06" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《一拍即合，万象新生》 · 剧照 07"><img src="assets/works/yipai/07.webp" alt="《一拍即合，万象新生》剧照 07" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《一拍即合，万象新生》 · 剧照 08"><img src="assets/works/yipai/08.webp" alt="《一拍即合，万象新生》剧照 08" loading="lazy"></button>
+              <button class="work-image-button" type="button" data-lightbox-title="《一拍即合，万象新生》 · 剧照 09"><img src="assets/works/yipai/09.webp" alt="《一拍即合，万象新生》剧照 09" loading="lazy"></button>
+            </div>
+            <div class="work-project-body"><p class="work-project-description">以“一拍即合”为创意入口，连接运动、演出、城市空间与生活方式，通过三维场景和动态图形，展开光谷文化中心所承载的多元体验与城市想象。</p><div class="work-project-info"><div class="work-role"><b>职责</b><span>导演 · 剪辑 · 调色</span></div><div class="work-meta"><span>品牌宣传片</span><span>三维视觉</span><span>城市文化</span></div><a class="button work-button" href="https://www.xinpianchang.com/a13757693?from=webShare&amp;channel=copyLink" target="_blank" rel="noopener noreferrer">新片场观看完整作品 <span>↗</span></a></div></div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -1755,6 +2082,20 @@
             <span><b>新片场</b>夏一条</span>
           </div>
         </div>
+        <div class="qr-grid reveal" aria-label="社交媒体二维码">
+          <article class="qr-item">
+            <div class="qr-visual"><img src="assets/qr/xiaohongshu.png" alt="夏一条的小红书二维码" loading="lazy"></div>
+            <div class="qr-copy"><span class="qr-platform">小红书</span><strong class="qr-handle">夏一条</strong><span class="qr-hint">扫码查看主页</span></div>
+          </article>
+          <article class="qr-item">
+            <div class="qr-visual"><img src="assets/qr/douyin.png" alt="夏一条的抖音二维码" loading="lazy"></div>
+            <div class="qr-copy"><span class="qr-platform">抖音</span><strong class="qr-handle">夏一条</strong><span class="qr-hint">扫码查看主页</span></div>
+          </article>
+          <article class="qr-item">
+            <div class="qr-visual"><img src="assets/qr/xinpianchang.png" alt="夏一条的新片场二维码" loading="lazy"></div>
+            <div class="qr-copy"><span class="qr-platform">新片场</span><strong class="qr-handle">夏一条</strong><span class="qr-hint">扫码查看作品</span></div>
+          </article>
+        </div>
         <footer class="footer">
           <span>© 2026 XIA LIYANG. 保留所有权利。</span>
           <div class="footer-disciplines"><span>导演</span><span>摄影</span><span>后期</span></div>
@@ -1762,6 +2103,16 @@
         </footer>
       </div>
     </section>
+
+    <dialog class="lightbox" aria-label="作品图片预览">
+      <div class="lightbox-inner">
+        <button class="lightbox-close" type="button" aria-label="关闭预览">×</button>
+        <button class="lightbox-nav lightbox-prev" type="button" aria-label="上一张">‹</button>
+        <img class="lightbox-image" alt="">
+        <p class="lightbox-caption"></p>
+        <button class="lightbox-nav lightbox-next" type="button" aria-label="下一张">›</button>
+      </div>
+    </dialog>
   </main>
 
   <script>
@@ -1836,6 +2187,39 @@
         });
       });
     }
+
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImage = lightbox.querySelector('.lightbox-image');
+    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+    const imageButtons = [...document.querySelectorAll('.work-image-button')];
+    let activeImageIndex = 0;
+
+    const showLightboxImage = (index) => {
+      activeImageIndex = (index + imageButtons.length) % imageButtons.length;
+      const button = imageButtons[activeImageIndex];
+      const image = button.querySelector('img');
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+      lightboxCaption.textContent = button.dataset.lightboxTitle || image.alt;
+    };
+
+    imageButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        showLightboxImage(index);
+        lightbox.showModal();
+      });
+    });
+
+    lightbox.querySelector('.lightbox-close').addEventListener('click', () => lightbox.close());
+    lightbox.querySelector('.lightbox-prev').addEventListener('click', () => showLightboxImage(activeImageIndex - 1));
+    lightbox.querySelector('.lightbox-next').addEventListener('click', () => showLightboxImage(activeImageIndex + 1));
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+    lightbox.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') showLightboxImage(activeImageIndex - 1);
+      if (event.key === 'ArrowRight') showLightboxImage(activeImageIndex + 1);
+    });
   </script>
 </body>
 </html>
